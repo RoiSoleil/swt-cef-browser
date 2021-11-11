@@ -45,7 +45,7 @@ jobs:
          run: |
             git clone https://user:$ACTION_TOKEN@github.com/RoiSoleil/swt-cef-browser-update-site
             cd swt-cef-browser-update-site
-			cd latest
+            cd latest
             git config user.name "RoiSoleil"
             git config user.email "helios.gilles@gmail.com"
             rm -fr *
