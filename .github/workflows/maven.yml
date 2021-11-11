@@ -48,7 +48,7 @@ jobs:
             cd latest
             git config user.name "RoiSoleil"
             git config user.email "helios.gilles@gmail.com"
-            rm -fr *
+            rm -r *
             cp -r ../../sites/target/repository/* .
             git add .
             git commit -m "New version of the update site"
