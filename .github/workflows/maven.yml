@@ -44,11 +44,12 @@ jobs:
             ACTIONS_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
          run: |
             git clone https://user:$ACTION_TOKEN@github.com/RoiSoleil/swt-cef-browser-update-site
-            cd latest
+            cd swt-cef-browser-update-site
+			cd latest
             git config user.name "RoiSoleil"
             git config user.email "helios.gilles@gmail.com"
             rm -fr *
-            cp -r ../sites/target/repository/* .
+            cp -r ../../sites/target/repository/* .
             git add .
             git commit -m "New version of the update site"
             git push -f https://RoiSoleil:$ACTIONS_TOKEN@github.com/RoiSoleil/swt-cef-browser-update-site HEAD:main
