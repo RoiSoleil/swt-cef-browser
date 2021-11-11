@@ -40,15 +40,16 @@ jobs:
             files: |
                sites/target/swt-cef-browser-*.zip
       -  name: Publish p2 update site
+         shell: bash
          env:
             ACTIONS_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
-         run: |
-            git clone https://user:$ACTION_TOKEN@github.com/RoiSoleil/swt-cef-browser-update-site
+         run: |-
+            git clone https://github.com/RoiSoleil/swt-cef-browser-update-site
             cd swt-cef-browser-update-site
             cd latest
             git config user.name "RoiSoleil"
             git config user.email "helios.gilles@gmail.com"
-            rm -r *
+            rm -fr *
             cp -r ../../sites/target/repository/* .
             git add .
             git commit -m "New version of the update site"
